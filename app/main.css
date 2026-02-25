@@ -1,0 +1,567 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2b0f4c, #000000);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.Main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.MainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  max-width: 90vw;
+}
+
+.MainFormTitle {
+  margin: 0;
+}
+
+.AppLangSelector {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 4px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  gap: 4px;
+}
+
+.AppLangBtn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.AppLangBtn.active {
+  background: #622a8f;
+  box-shadow: 0 0 10px rgba(98, 42, 143, 0.5);
+}
+
+.MainForm {
+  width: 500px;
+  max-width: 90vw;
+  min-height: 300px;
+  padding: 40px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.MainFormTextInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.TitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.MainFormTextInputTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.TooltipContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TooltipIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s;
+  cursor: help;
+}
+
+.TooltipContainer:hover .TooltipIcon {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.TooltipText {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: max-content;
+  max-width: 250px;
+  white-space: normal;
+  background: rgba(30, 10, 50, 0.95);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  z-index: 999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+.TooltipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(30, 10, 50, 0.95) transparent transparent transparent;
+}
+
+.TooltipContainer:hover .TooltipText {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.MainFormTextInputInput {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  outline: none !important;
+  color: #ffffff;
+  padding: 8px 20px 8px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.MainFormToggleInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px !important;
+}
+
+.MainFormToggleInputToggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+.MainFormToggleInputTextInputs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.toggle-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: none !important;
+  outline: none !important;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-input:checked {
+  background-color: #622a8f;
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.toggle-input:focus-visible {
+  outline: 2px solid #622a8f;
+  outline-offset: 4px;
+}
+
+.CustomSelectContainer {
+  width: 100%;
+  position: relative;
+}
+
+.CustomSelectTrigger {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  padding: 6px 20px 6px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  min-height: 34px;
+}
+
+.CustomSelectMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(30, 10, 50, 0.95);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.CustomSelectMenu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.CustomSelectMenu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.CustomSelectMenu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.CustomSelectOption {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.CustomSelectOption:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.CustomSelectOption.selected {
+  background: rgba(98, 42, 143, 0.4);
+}
+
+.CustomSelectCheckbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.CustomSelectCheckbox:checked {
+  background-color: #622a8f;
+  border-color: #622a8f;
+}
+
+.CustomSelectCheckbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.SelectedTagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.SelectedTag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.SelectedTag:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.SelectedTagRemove {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 2px;
+  opacity: 0.6;
+}
+
+.SelectedTag:hover .SelectedTagRemove {
+  opacity: 1;
+}
+
+.TranslationsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.TranslationCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.TranslationCardTitle {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.TranslationInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.TranslationInputGroup label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.MainActions {
+  display: flex;
+  gap: 16px;
+}
+
+.MainActionsButton {
+  color: #ffffff;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  transition: 0.4s;
+  font-weight: 500;
+}
+
+.MainActionsButton:hover {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.MainActionsButton.copied {
+  background-color: #2e7d32;
+  border-color: #2e7d32;
+  color: #ffffff;
+}
+
+.ModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.ModalContent {
+  width: 800px;
+  max-width: 90vw;
+  max-height: 80vh;
+  background: rgba(30, 10, 50, 0.95);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.ModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ModalTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.ModalClose {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.ModalClose:hover {
+  color: #ff4d4d;
+}
+
+.ModalBody {
+  flex: 1;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ModalBody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ModalBody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ModalBody::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
