@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "VFR Script Form",
-  description: "Created by yours truly",
+  description: "Create VFR scripts with ease using this form-based interface.",
 };
 
 export default function RootLayout({

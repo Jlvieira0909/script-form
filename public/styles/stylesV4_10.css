@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+@font-face {
+  font-family: "Sizebay";
+  src: url("https://static.sizebay.technology/font/stores/fontRuler/fonts/buttons-icons.woff");
+}
+
+@font-face {
+  font-family: "Sizebay";
+  src: url("https://static.sizebay.technology/font/stores/fontRuler/fonts/untitled-font-3.woff");
+}
+
+:root {
+  --main-font: "Outfit", sans-serif;
+  --main-color: #000000;
+}
+
+div.szb-vfr-btns {
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+button.vfr__button--clean {
+  font-family: var(--main-font);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--main-color);
+  margin: 0;
+  height: max-content;
+  line-height: normal;
+  outline: none !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.vfr__button--clean:hover {
+  text-decoration: none;
+}
+
+button#szb-vfr-button::after {
+  content: "";
+  display: flex;
+  height: 15px;
+  margin-left: 8px;
+  width: 30px;
+  background: url(https://static.sizebay.technology/icons/new.svg) 50% center /
+    100% 100% no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .vfr__container {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  button.vfr__button--clean {
+    font-size: 12px;
+  }
+}

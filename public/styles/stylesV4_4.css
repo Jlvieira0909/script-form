@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+@font-face {
+  font-family: "Sizebay";
+  src: url("https://static.sizebay.technology/font/stores/fontRuler/fonts/buttons-icons.woff");
+}
+
+@font-face {
+  font-family: "Sizebay";
+  src: url("https://static.sizebay.technology/font/stores/fontRuler/fonts/untitled-font-3.woff");
+}
+
+:root {
+  --main-font: "Outfit", sans-serif;
+  --main-color: #000000;
+}
+
+div.szb-vfr-btns {
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+button.vfr__button--clean {
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--main-color);
+  margin: 0;
+  height: max-content;
+  line-height: normal;
+  outline: none !important;
+}
+
+.vfr__button--clean:hover {
+  text-decoration: none;
+}
+
+button.vfr__button--clean::before {
+  display: flex;
+  font-family: "Sizebay";
+  font-size: 19px;
+  text-transform: none;
+  color: #000;
+  align-self: center;
+  margin-right: 5px;
+}
+
+button#szb-vfr-button:before {
+  background: url(https://static.sizebay.technology/icons/rulerBlack.svg) center
+    center / 100% 100% no-repeat;
+  height: 14px;
+  width: 14px;
+  content: "";
+}
+
+button#szb-measurements-button:before {
+  background: url(https://static.sizebay.technology/icons/measures-tape.svg)
+    center center / 100% 100% no-repeat;
+  height: 24px;
+  width: 24px;
+  content: "";
+}
+
+@media screen and (max-width: 768px) {
+  .vfr__container {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  button.vfr__button--clean {
+    font-size: 12px;
+  }
+}

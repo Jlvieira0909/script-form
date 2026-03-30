@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+@font-face {
+  font-family: "Sizebay";
+  src: url("https://static.sizebay.technology/font/stores/fontRuler/fonts/buttons-icons.woff");
+}
+
+@font-face {
+  font-family: "Sizebay";
+  src: url("https://static.sizebay.technology/font/stores/fontRuler/fonts/untitled-font-3.woff");
+}
+
+:root {
+  --main-font: "Outfit", sans-serif;
+  --main-color: #000000;
+}
+
+div.szb-vfr-btns {
+  gap: 0.5em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+button.vfr__button--clean {
+  font-family: var(--main-font);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--main-color);
+  width: 45%;
+  margin: 0;
+  height: max-content;
+  line-height: normal;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(238, 238, 238);
+  justify-content: left;
+}
+
+.vfr__button--clean:hover {
+  text-decoration: none;
+}
+
+button.vfr__button--clean::before {
+  display: flex;
+  align-self: center;
+  margin-right: 8px;
+}
+
+button#szb-vfr-button:before {
+  align-items: center;
+  height: 24px !important;
+  font-size: 0px;
+  justify-content: center;
+  margin-right: 8px;
+  width: 24px;
+  background: url(https://static.sizebay.technology/icons/hanger40x40.svg) 100%
+    center / 100% 100% no-repeat rgb(238, 238, 238);
+  border-radius: 4px 0px 0px 4px;
+  content: "";
+}
+
+button#szb-measurements-button:before {
+  align-items: center;
+  height: 24px !important;
+  font-size: 0px;
+  justify-content: center;
+  margin-right: 8px;
+  width: 24px;
+  background: url(https://static.sizebay.technology/icons/measures-tape.svg)
+    100% center / 100% 100% no-repeat rgb(238, 238, 238);
+  border-radius: 4px 0px 0px 4px;
+  content: "";
+}
+
+@media screen and (max-width: 768px) {
+  .vfr__container {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  button.vfr__button--clean {
+    font-size: 12px;
+  }
+}
